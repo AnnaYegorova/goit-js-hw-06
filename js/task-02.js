@@ -7,10 +7,11 @@ const ingredients = [
   "Condiments",
 ];
 const refList = document.querySelector("#ingredients");
-
-for (let i = 0; i < ingredients.length; i += 1) {
+const refElements = ingredients.map((el) => {
   const refEl = document.createElement("li");
-  refEl.textContent = ingredients[i];
+  refEl.textContent = el;
   refEl.classList.add("item");
-  refList.append(refEl);
-}
+  return refEl;
+});
+
+refList.append(...refElements);
